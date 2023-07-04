@@ -1,0 +1,163 @@
+body {
+    background-color: #FFDEE9;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+}
+
+.container {
+    width: 70%;
+}
+
+.todo {
+    
+    &__heading {
+        font-family: 'Caprasimo', cursive;
+        background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__form {
+
+        &__input {
+            font-size: 1.2rem !important;
+            padding: 10px 8px;
+            border: 2px solid #ccc;
+
+            &:focus {
+                border-color: #007bff;
+            }
+        }
+
+        &__button {
+            background-color: #007bff;
+            padding: 0 24px;
+            font-size: 1.2rem !important;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+
+    &__list {
+        border-top: 4px solid;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to right bottom, #6a5af9, #f62682);
+
+        &__item {
+            padding: 12px 0;
+            border-bottom: 2px solid;
+            border-image-slice: 1;
+            border-image-source: linear-gradient(to right bottom, #6a5af9, #f62682);
+
+            .stt {
+                min-width: 60px;
+            }
+
+            .status {
+                height: 25px;
+                width: 25px;
+            }
+            
+            .name {
+
+                &--done {
+                    opacity: 0.5;
+                    text-decoration: line-through;
+                }
+            }
+
+            .button {
+                padding: 4px 16px;
+
+                &:hover {
+                    opacity: 0.9;
+                }
+
+                &--update {
+                    background-color: #28a745;
+                }
+
+                &--delete {
+                    background-color: #dc3545;
+                }
+            }
+
+            .icon {
+                position: relative;
+
+                &__tooltip.active {
+                    display: block;
+                }
+
+                &__tooltip {
+                    z-index: 999;
+                    display: none;
+                    position: absolute;
+                    top: 30px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: white;
+                    padding: 4px;
+                    border-radius: 4px;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: -8px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 0px;
+                        height: 0px;
+                        border-left: 10px solid transparent;
+                        border-right: 10px solid transparent;
+                        border-bottom: 10px solid #fff; 
+                    }
+
+                    &__edit, &__delete {
+                        border-radius: 4px;
+                        padding: 0 2px;
+
+                        &:hover {
+                            background-color: #ccc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 576px) {
+    .todo {
+
+        &__list {
+
+            &__item {
+
+                .button {
+                    display: block;
+                }
+
+                .icon {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+    
+}
